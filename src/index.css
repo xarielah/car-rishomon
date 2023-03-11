@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Rubik", sans-serif;
+  @apply text-gray-700 bg-blue-50;
+}
+
+section.main {
+  @apply bg-white p-12;
+  min-height: calc(100vh - 184px);
+}
+
+.full-bleed {
+  box-shadow: 0 0 0 100vmax rgb(234 179 8);
+  clip-path: inset(0 -100vmax);
+}
+
+.full-bleed-white {
+  box-shadow: 0 0 0 100vmax #fff;
+  clip-path: inset(0 -100vmax);
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.magnify {
+  fill: rgb(65 75 91);
+  animation: search 1s infinite ease;
+}
+.doc {
+  fill: rgba(100 120 140);
+  animation: flyby 1s infinite ease;
+}
+
+@keyframes search {
+  0% {
+    transform: translate(40px, 40px) scale(0.6);
+  }
+  50% {
+    transform: translate(20px, 20px) scale(0.6);
+  }
+  100% {
+    transform: translate(40px, 40px) scale(0.6);
+  }
+}
+
+@keyframes flyby {
+  0% {
+    transform: translate(-20px, 20px) scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(30px, 20px) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, 20px) scale(0.2);
+    opacity: 0;
+  }
+}
