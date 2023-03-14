@@ -20,7 +20,7 @@ const SideHistory = () => {
         </button>
       </div>
       <h1 className="font-bold text-4xl">חיפושים אחרונים:</h1>
-      <article className="flex flex-col gap-3 my-8">
+      <article className="flex flex-col-reverse gap-3 my-8">
         {searchData.history && searchData.history.length > 0
           ? searchData.history.map((historyItem, i) => (
               <HistoryItem item={historyItem} key={i} />

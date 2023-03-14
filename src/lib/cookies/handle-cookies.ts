@@ -7,8 +7,15 @@ function initializeCookie(): void {
   if (!cookie) Cookies.set(cookieName, "[]");
 }
 
-function addCarSearch(car: CookieSearchHistory): CookieSearchHistory[] {
+function addCarSearch(
+  car: CookieSearchHistory
+): CookieSearchHistory[] | undefined {
   const history = getCurrentHistory();
+  if (
+    history.length > 0 &&
+    history.some((someCar) => someCar.carNumber === car.carNumber)
+  )
+    return history;
   if (history.length === 5) history.shift();
   history.push(car);
   setCarHistory(history);
