@@ -34,14 +34,14 @@ const HandleDataSearch = () => {
           (data.records[0] as Car).mispar_rechev + "" !== searchData.term
         ) {
           setNotFound(true);
-          addSearch({ carNumber: searchData.term!, status: false });
+          return addSearch({ carNumber: searchData.term!, status: false });
         }
 
         setCarData(data.records[0]);
         addSearch({
           carNumber: searchData.term!,
           status: true,
-          carModel: (data.records[0] as Car).tozeret_nm,
+          carModel: (data.records[0] as Car).tozeret_nm ?? "",
         });
       } catch (error) {
         setError(true);

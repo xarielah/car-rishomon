@@ -9,7 +9,7 @@ body {
 
 section.main {
   @apply bg-white p-12;
-  min-height: calc(100vh - 184px);
+  min-height: calc(100vh - 284px);
 }
 
 .full-bleed {

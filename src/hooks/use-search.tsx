@@ -19,6 +19,7 @@ const useSearch = () => {
 
   const addSearch = (payload: CookieSearchHistory) => {
     const history = addCarSearch(payload);
+    if (!history) return;
     dispatch(updateCarSearches(history));
   };
 
